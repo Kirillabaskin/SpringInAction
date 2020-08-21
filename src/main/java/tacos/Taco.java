@@ -20,5 +20,5 @@ public class Taco {
 
     @NotNull
     @Size(min=2, message="You must choose at least 2 ingredient")
-    private List<String> ingredients;
+    private List<Ingredient> ingredients;
 }
