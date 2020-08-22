@@ -30,7 +30,7 @@ public class DesignTacoController {
 
     private final IngredientRepository ingredientRepo;
 
-    private TacoRepository designRepo;
+    private final TacoRepository designRepo;
 
     @Autowired
     public DesignTacoController(
@@ -69,10 +69,10 @@ public class DesignTacoController {
     @PostMapping
     public String processDesign(
             @Valid Taco design, Errors errors,
-            @ModelAttribute Order order) {
+            @ModelAttribute Order order, Model model) {
 
         if (errors.hasErrors()) {
-            return "design";
+            showDesignForm(model);
         }
 
         Taco saved = designRepo.save(design);
