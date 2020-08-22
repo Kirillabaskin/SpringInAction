@@ -72,7 +72,7 @@ public class DesignTacoController {
             @ModelAttribute Order order, Model model) {
 
         if (errors.hasErrors()) {
-            showDesignForm(model);
+            return showDesignForm(model);
         }
 
         Taco saved = designRepo.save(design);
