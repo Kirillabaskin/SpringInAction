@@ -32,7 +32,6 @@ public class DesignTacoController {
 
     private final TacoRepository designRepo;
 
-    @Autowired
     public DesignTacoController(
             IngredientRepository ingredientRepo,
             TacoRepository designRepo) {
@@ -77,6 +76,10 @@ public class DesignTacoController {
 
         Taco saved = designRepo.save(design);
         order.addDesign(saved);
+
+        //FOR EDUCATIONAL PURPOSES ONLY BECAUSE IT'S UNCOMFORTABLE ALWAYS LOOKING FOR A VALID CREDIT CARD NUMBER
+        order.setCcNumber("123456789064");
+        //FOR EDUCATIONAL PURPOSES ONLY BECAUSE IT'S UNCOMFORTABLE ALWAYS LOOKING FOR A VALID CREDIT CARD NUMBER
 
         return "redirect:/orders/current";
     }
