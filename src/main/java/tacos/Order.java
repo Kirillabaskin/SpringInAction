@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.GenerationType;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -59,6 +60,9 @@ public class Order {
 
     @ManyToMany(targetEntity = Taco.class)
     private List<Taco> tacos = new ArrayList<>();
+
+    @ManyToOne
+    private User toUser;
 
     public void addDesign(Taco design) {
         this.tacos.add(design);
