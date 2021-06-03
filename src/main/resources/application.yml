@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:~/test_base
+    username: sa
+    password: password
+  activemq:
+    broker-url: http:localhost:8161
+    user: kirill
+    password: admin
+  jms:
+    template:
+      default-destination: tacocloud.order.queue
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
